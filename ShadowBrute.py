@@ -1,6 +1,7 @@
 # A simple bruteforce tool to crack UNIX passwords using wordlists
 # calfcrusher@inventati.org
 # Usage: ./ShadowBrute.py HASHFILE WORDLIST
+# insert many hash as you want in HASHFILE once one per line, same in wordlist file
 
 
 import crypt
@@ -47,7 +48,8 @@ def main():
 
     ascii_banner = pyfiglet.figlet_format("ShadowBrute")
     print(ascii_banner)
-    print("calfcrusher@inventati.org | For educational use only.\n")
+    print("calfcrusher@inventati.org | For educational use only.")
+    print("*****************************************************\n")
 
     if len(sys.argv) < 3 or len(sys.argv) > 3:
         print("Usage: ./ShadowBrute.py hashes.txt wordlist.txt")
