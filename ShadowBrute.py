@@ -1,16 +1,16 @@
 # A simple bruteforce tool to crack UNIX passwords using wordlists
-#
-# It should works on all Linux distro and °BSD
-#
 # calfcrusher@inventati.org
-#
 # Usage: ./ShadowBrute.py HASHFILE WORDLIST
-# insert many hash strings as you want in HASHFILE once one per line, same in wordlist file
+# insert many hash as you want in HASHFILE once one per line, same in wordlist file
 
 
 import crypt
 import sys
+import time
 import pyfiglet
+
+
+start = time.time()
 
 
 def crackpass(list, hashstring, salted):
@@ -84,3 +84,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+print('It took {0:0.1f} seconds'.format(time.time() - start))
