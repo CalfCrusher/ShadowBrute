@@ -26,7 +26,6 @@ def crackpass(list, hashstring, salted=0):
 
     # Check if salt is present
     if salted:
-        # Check what type of hash we have (MD5, Blowfish, SHA-256, SHA-512)
         for word in wlist:
             word = word.strip('\n')
             original_hash = str(salted + "$" + hashstring).strip('\n')
@@ -36,7 +35,6 @@ def crackpass(list, hashstring, salted=0):
                 print("[+] CRACKED: " + word + "\n")
 
     else:
-        # Check what type of hash we have (MD5, Blowfish, SHA-256, SHA-512)
         for word in wlist:
             word = word.strip('\n')
             original_hash = str(salted + "$" + hashstring).strip('\n')
