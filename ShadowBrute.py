@@ -1,7 +1,6 @@
 # A simple bruteforce tool to crack UNIX passwords using wordlists
 # calfcrusher@inventati.org
 # Usage: ./ShadowBrute.py HASHFILE WORDLIST
-# insert many hash as you want in HASHFILE once one per line, same in wordlist file
 
 
 import crypt
