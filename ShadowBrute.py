@@ -75,7 +75,7 @@ def main():
             salt = 0
         else:
             print("Error: Unrecognized hash in " + filehash)
-            exit(1)
+            exit(0)
 
         crackpass(wordlist, hash, salt)
 
