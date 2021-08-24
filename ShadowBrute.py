@@ -24,7 +24,7 @@ def crackpass(cryptPass):
 
 def main():
     if len(sys.argv) < 3 or len(sys.argv) > 3:
-        print "Usage: python ShadowBrute.py hashes.txt wordlist.txt"
+        print "Usage: ./ShadowBrute.py hashes.txt wordlist.txt"
         exit(0)
     else:
         filehash = sys.argv[1]
@@ -37,10 +37,10 @@ def main():
             exit(0)
 
     for line in fhash.readlines():
-        print line
-        #user = line.split(':')[0]
-        #cryptPass = line.split(':')[1].strip(' ')
-        #print "[*] Cracking Password For: " + user
+        hash_identifier = line.split('$')[1]
+        salt = line.split('$')[2]
+        hash = line.split ('$')[3]
+        print "[*] Cracking Password For: $" + hash_identifier + "$" + salt + "$" + hash
         #testPass(crackpass())
 
 
