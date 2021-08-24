@@ -37,7 +37,6 @@ def crackpass(list, hashstring, salted=0):
     else:
         for word in wlist:
             word = word.strip('\n')
-            original_hash = str(salted + "$" + hashstring).strip('\n')
             crypted_word = crypt.crypt(word)
             if hashstring == crypted_word.strip('\n'):
                 print("[+] HASH: " + hashstring)
