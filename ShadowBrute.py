@@ -2,10 +2,8 @@
 #
 # It should works on all Linux distro and °BSD
 #
-# Automatically checks hash identifier (MD5, Blowfish, SHA-256, SHA-512)
-# Automatically checks salt
-#
 # calfcrusher@inventati.org
+#
 # Usage: ./ShadowBrute.py HASHFILE WORDLIST
 # insert many hash strings as you want in HASHFILE once one per line, same in wordlist file
 
