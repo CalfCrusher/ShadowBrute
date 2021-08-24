@@ -13,7 +13,7 @@ import sys
 import pyfiglet
 
 
-def crackpass(list, hashstring, salted=0):
+def crackpass(list, hashstring, salted):
     """Bruteforce function"""
 
     try:
@@ -76,10 +76,9 @@ def main():
         else:
             print("Error: Unrecognized hash in " + filehash)
             exit(1)
-        if salt:
-            crackpass(wordlist, hash, salt)
-        else:
-            crackpass(wordlist, hash)
+
+        crackpass(wordlist, hash, salt)
+
     fhash.close()
 
 
