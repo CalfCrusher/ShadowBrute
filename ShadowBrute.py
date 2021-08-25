@@ -10,9 +10,6 @@ import time
 import pyfiglet
 
 
-start = time.time()
-
-
 def crackpass(list, hashstring, salted):
     """Bruteforce function"""
 
@@ -84,6 +81,7 @@ def main():
 
 
 if __name__ == "__main__":
+    start = time.time()
     main()
 
 print('It took {0:0.1f} seconds'.format(time.time() - start))
