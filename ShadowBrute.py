@@ -82,5 +82,4 @@ def main():
 if __name__ == "__main__":
     start = time.time()
     main()
-
-print('It took {0:0.1f} seconds'.format(time.time() - start))
+    print('It took {0:0.1f} seconds'.format(time.time() - start))
