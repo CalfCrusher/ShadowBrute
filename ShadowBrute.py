@@ -7,6 +7,8 @@ import crypt
 import sys
 import time
 import pyfiglet
+import os
+import psutil
 
 
 def crackpass(list, hashstring, salted):
@@ -27,7 +29,7 @@ def crackpass(list, hashstring, salted):
             if original_hash == crypted_word.strip('\n'):
                 print("[+] HASH: " + salted + hashstring)
                 print("[+] CRACKED: " + word + "\n")
-
+                break
     else:
         for word in wlist:
             word = word.strip('\n')
@@ -35,6 +37,7 @@ def crackpass(list, hashstring, salted):
             if hashstring == crypted_word.strip('\n'):
                 print("[+] HASH: " + hashstring)
                 print("[+] CRACKED: " + word + "\n")
+                break
 
     wlist.close()
 
@@ -59,6 +62,8 @@ def main():
             print("Error: Unable to access hash file")
             exit(0)
 
+    start = time.time()
+
     # Reading lines from hash file
     for line in fhash.readlines():
         # Check if our hash contains salt or not
@@ -78,8 +83,9 @@ def main():
 
     fhash.close()
 
+    print('It took {0:0.1f} seconds'.format(time.time() - starttime))
 
 if __name__ == "__main__":
-    start = time.time()
     main()
-    print('It took {0:0.1f} seconds'.format(time.time() - start))
+
+print("No valid password found!")
