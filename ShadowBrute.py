@@ -7,8 +7,6 @@ import crypt
 import sys
 import time
 import pyfiglet
-import os
-import psutil
 
 
 def crackpass(list, hashstring, salted):
@@ -62,7 +60,6 @@ def main():
             print("Error: Unable to access hash file")
             exit(0)
 
-    start = time.time()
 
     # Reading lines from hash file
     for line in fhash.readlines():
@@ -83,8 +80,8 @@ def main():
 
     fhash.close()
 
-    print('It took {0:0.1f} seconds'.format(time.time() - starttime))
 
 if __name__ == "__main__":
+    start = time.time()
     main()
-
+    print('It took {0:0.1f} seconds'.format(time.time() - start))
